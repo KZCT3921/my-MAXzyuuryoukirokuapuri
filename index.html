@@ -23,6 +23,23 @@
     <button type="submit">記録</button>
   </form>
 
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyBW9p3RKioWcM9bOY6uplJRoXQupqiTc7M",
+  authDomain: "zyuuryouapuri.firebaseapp.com",
+  projectId: "zyuuryouapuri",
+  storageBucket: "zyuuryouapuri.firebasestorage.app",
+  messagingSenderId: "107095566247",
+  appId: "1:107095566247:web:401b3a6c9483d3b8a2f882",
+  measurementId: "G-2GWVG0BCFT"
+};
+  const firebaseConfig = { /* ... */ };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+
   <div class="charts">
     <canvas id="probChart"></canvas>
     <canvas id="conditionChart"></canvas>
