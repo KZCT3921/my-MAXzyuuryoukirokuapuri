@@ -335,3 +335,17 @@ closeHistory.onclick = () => {
 };
 
 window.addEventListener('DOMContentLoaded', updateCharts);
+
+// 保存
+db.collection("benchRecords").add({
+  date: "2025-05-19",
+  weight: 80,
+  condition: 8
+});
+
+// 取得
+db.collection("benchRecords").get().then(snapshot => {
+  snapshot.forEach(doc => {
+    console.log(doc.data());
+  });
+});
