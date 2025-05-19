@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAX重量トラッカー</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div style="margin-top: 20px; text-align: right;">
+    <button id="historyBtn" style="padding:8px 18px;border-radius:8px;background:#6a82fb;color:#fff;border:none;font-weight:600;box-shadow:0 2px 8px #a1c4fd88;cursor:pointer;">履歴</button>
+  </div>
+  <h2>MAX重量記録アプリ</h2>
+  <form id="maxForm">
+    日付: <input type="date" id="date" required>
+    重量(kg): <input type="number" id="weight" step="0.1" min="1" required>
+    調子(1-10): <input type="number" id="condition" min="1" max="10" required>
+    <button type="submit">記録</button>
+  </form>
+
+  <div class="charts">
+    <canvas id="probChart"></canvas>
+    <canvas id="conditionChart"></canvas>
+    <canvas id="setsChart"></canvas>
+  </div>
+
+  <div id="historyModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);z-index:2000;align-items:center;justify-content:center;">
+    <div style="background:#fff;padding:24px 18px 18px 18px;border-radius:12px;max-width:90vw;max-height:80vh;overflow:auto;position:relative;">
+      <button id="closeHistory" style="position:absolute;top:12px;right:12px;padding:6px 18px;border-radius:8px;background:#6a82fb;color:#fff;border:none;font-weight:600;z-index:10;">閉じる</button>
+      <h3 style="margin-top:0;">履歴(過去の1週間ごとの記録）</h3>
+      <ul id="historyList" style="padding-left:1em;"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
